@@ -53,72 +53,40 @@ const products = [
     }
   }]
 
-
+function MyButton (){
+  const conditionForternaryOpt = true
+{ <button>{conditionForternaryOpt ? "Ye tru hogya tou login" : "React hogyi complete :D"}</button> }
+alert(`Product has been Purchased `)
+}
 
 function App() {
   // const [count, setCount] = useState(0)
-const conditionForternaryOpt = false
   return (
-    // <>
-    //   <div>
-    //     <a href="https://vitejs.dev" target="_blank">
-    //       <img src={viteLogo} className="logo" alt="Vite logo" />
-    //     </a>
-    //     <a href="https://react.dev" target="_blank">
-    //       <img src={reactLogo} className="logo react" alt="React logo" />
-    //     </a>
-    //   </div>
-    //   <h1>Vite + React</h1>
-    //   <div className="card">
-    //     <button onClick={() => setCount((count) => count + 1)}>
-    //       count is {count}
-    //     </button>
-    //     <p>
-    //       Edit <code>src/App.jsx</code> and save to test HMR
-    //     </p>
-    //   </div>
-    //   <p className="read-the-docs">
-    //     Click on the Vite and React logos to learn more
-    //   </p>
-    // </>
-// we can write html markups here 
-
-
-
-// we can only do it inside single element and it should be a closing tag i.e <br/> 
-// instead of class we use className  with camel case practice or we can also use html to jsx converter to don't need to do anything like that else we have to follow all the rules
-
 <>
-{/* <h1>Hello World</h1> */}
-{/* <input type="text" placeholder='Enter Your Name' className='nameInput' /> */}
-<button>{conditionForternaryOpt ? "Ye tru hogya tou login" : "React hogyi complete :D"}</button>
-<h1>Products :</h1>
 
 
 
 
-{products.map((product, index) => (
-  <img key={index} src={product.image}  height="200px" width="100px" /> // here key works as an id which is dynamic cuz index number change horha so ... 
-  
-  
+
+
+{products.map((product , index) =>(  
+<div className="card" key={index}>
+  <img src={product.image}  style = {{
+    width : "200px"
+  }} />
+  <div className="container">
+    <h4><b>{product.title}</b></h4>
+    <p>{product.description}</p>
+  </div>
+  <button onClick={MyButton}> Buy Now</button>
+</div>
+
+
+
 ))}
 
 
-
-
-{/* {conditionForternaryOpt ? "Ye tru hogya tou login" : "false hogya means logout"} */}
-{/* what is this? */}
-{/* agr condition true hogyi tou phla wrna second wala chlta hai : iske baad wala  */}
-{/* its short form for if else condition  */}
-
 </>
-
-
-
-
-
-
-
   )
 }
 
